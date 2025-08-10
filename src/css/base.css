@@ -46,8 +46,8 @@ main:has(.back-link) {
   content: '';
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 90px;
+  left: 50%;
   width: inherit;
   height: inherit;
   border-radius: 50%;

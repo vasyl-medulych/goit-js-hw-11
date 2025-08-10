@@ -1,6 +1,13 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+
+const spanEl = document.querySelector('.loader');
 const ulElem = document.querySelector('.gallery');
+console.log(spanEl);
+if (spanEl) {
+  spanEl.hidden = true;
+}
+
 const gallery = new SimpleLightbox('.gallery-item a', {
   captionsData: 'alt', // Вказуємо, що підписи братимуться з атрибута 'alt' зображення
   captionDelay: 250, // Затримка появи підпису
@@ -18,13 +25,11 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  const loader = `<span class="loader"></span>`;
-  ulElem.insertAdjacentHTML('afterbegin', loader);
+  spanEl.hidden = false;
 }
 
 export function hideLoader() {
-  const loader = ``;
-  ulElem.innerHTML = loader;
+  spanEl.hidden = true;
 }
 
 function templateImage(img) {
